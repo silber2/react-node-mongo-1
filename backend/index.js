@@ -20,5 +20,5 @@ app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 
 app.listen(process.env.PORT, () => {
-    console.log('escuchando')
+    res.send('escuchando')
 })
