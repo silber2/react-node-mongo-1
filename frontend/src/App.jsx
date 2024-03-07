@@ -18,7 +18,7 @@ return (
       
       <header>
         <h1 className='header__title'><Link to="/" >TiendaWeb</Link></h1>
-        {/* <Menutoggle /> */}
+        <Menutoggle />
       </header>
      
        <Routes>
