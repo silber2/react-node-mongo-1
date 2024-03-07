@@ -34,7 +34,7 @@ export default function Carrito({hideCart}) {
     <>
       {cartHeader}
       <ul className='cartContainer__ul'>
-        {carrito.length > 0 ? carrito.map((prod) => (
+        {carrito != undefined ? carrito.map((prod) => (
           <CartProd prod={prod} key={prod.name} handleEliminar={handleEliminar} />
         )) : <p className='cartFold'>No hay nada en el carrito</p>}
       </ul>
