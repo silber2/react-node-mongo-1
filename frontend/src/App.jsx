@@ -16,18 +16,18 @@ return (
   <CartProvider>
     <BrowserRouter>
       
-      {/* <header>
+      <header>
         <h1 className='header__title'><Link to="/" >TiendaWeb</Link></h1>
         <Menutoggle />
-      </header> */}
+      </header>
      
        <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/:categoria" element={<Productos />} />
+          <Route path="/:categoria" element={<Productos />} />
           <Route path='/name/:name' element={<ProductosDetail />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/newsletter" element={<Newsletter />} />
-          <Route path='/contacto&Redes' element={<ContactoRedes />} /> */}
+          <Route path='/contacto&Redes' element={<ContactoRedes />} />
        </Routes>
 
       <Footer />
