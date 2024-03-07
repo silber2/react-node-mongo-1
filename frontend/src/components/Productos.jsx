@@ -6,16 +6,17 @@ import axios from 'axios';
 
 export default function Productos() {
 
-  const {categoria} = useParams()
-  const [productos, setProductos] = useState([])
+  // const {categoria} = useParams()
+  // const [productos, setProductos] = useState([])
 
   useEffect(() => {
       axios.get("https://react-node-mongo-1.onrender.com/api/productos")
       .then(response => {
-        // if (response.data.length <= 0) {
-        //   return console.error('its empty')
-        // }
-        setProductos(response.data)
+        if (response.data.length <= 0) {
+          return console.error('its empty')
+        }
+        console.log(response.data)
+        // setProductos(response.data)
       })
       .catch(err => console.error(err + 'fetch error'))
   
@@ -24,13 +25,14 @@ export default function Productos() {
     return (
       <section className='productos-container'>
           {/* <label className='productos-container__label'>{productos.category ? productos.category : "Todos los Productos"}</label> */}
-          <div className='prodsContainer'>
+          {/* <div className='prodsContainer'>
                 {productos.map((prod, index) => (
                 <Producto 
                   producto={prod}
                   key={index}
                 />
                 ))}
-          </div>
+          </div> */}
+          <h4>assadsadsad</h4>
       </section>
     )}

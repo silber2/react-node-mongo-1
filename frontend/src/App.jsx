@@ -16,10 +16,10 @@ return (
   <CartProvider>
     <BrowserRouter>
       
-      <header>
+      {/* <header>
         <h1 className='header__title'><Link to="/" >TiendaWeb</Link></h1>
         <Menutoggle />
-      </header>
+      </header> */}
      
        <Routes>
           <Route path="/" element={<Home />} />
