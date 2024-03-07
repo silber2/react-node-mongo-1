@@ -14,8 +14,11 @@ export default function Carrito({hideCart}) {
   }
 
   useEffect(() => {
-    const storageCart = JSON.parse(localStorage.getItem('cart'))
-    setCarrito(storageCart)
+      const recuperarCart = async () => {     
+        const storageCart = await JSON.parse(localStorage.getItem('cart'))
+        setCarrito(storageCart)
+      }
+      recuperarCart()
   }, []);
 
   const cartHeader = (
