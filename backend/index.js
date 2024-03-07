@@ -8,7 +8,7 @@ import userRouter from './routes/user.js'
 
 const app = express()
 
-app.use(cors(process.env.FRONTEND_URL));
+app.use(cors());
 app.use(express.json())
 
 app.get('/', (req, res) => {
@@ -20,5 +20,5 @@ app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 
 app.listen(process.env.PORT, () => {
-    res.send('escuchando')
+    console.log('escuchando')
 })

@@ -21,7 +21,7 @@ return (
         <Menutoggle />
       </header>
      
-       {/* <Routes>
+       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:categoria" element={<Productos />} />
           <Route path='/name/:name' element={<ProductosDetail />} />
@@ -30,7 +30,7 @@ return (
           <Route path='/contacto&Redes' element={<ContactoRedes />} />
        </Routes>
 
-      <Footer /> */}
+      <Footer />
 
     </BrowserRouter>
   </CartProvider>

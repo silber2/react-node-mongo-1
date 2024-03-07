@@ -25,7 +25,7 @@ export const ProductosDetail = () => {
 
   useEffect(() => {
 
-    fetchItem(`http://localhost:4000/api/productos/name/${name}`)
+    fetchItem(`https://react-node-mongo-1.onrender.com/api/productos/name/${name}`)
 
   }, [])
 

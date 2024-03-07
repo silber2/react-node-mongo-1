@@ -21,7 +21,7 @@ export default function CarritoCompra({enviarTicket}) {
           }
     async function comprar () {
         try {
-            const axiosRes = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/compras`, compra)
+            const axiosRes = await axios.post(`https://react-node-mongo-1.onrender.com/api/compras`, compra)
             const ticket = axiosRes.data
             enviarTicket(ticket)
         } catch (error) {
