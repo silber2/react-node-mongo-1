@@ -10,7 +10,7 @@ export default function Productos() {
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
-      axios.get("https://react-node-mongo-1.onrender.com/api/productos")
+      axios.get(categoria ? `https://react-node-mongo-1.onrender.com/api/productos/category/${categoria}` : "https://react-node-mongo-1.onrender.com/api/productos")
       .then(response => {
         if (response.data.length <= 0) {
           return console.error('its empty')
@@ -19,7 +19,7 @@ export default function Productos() {
       })
       .catch(err => console.error(err + 'fetch error'))
   
-  }, [])
+  }, [categoria])
 
     return (
       <section className='productos-container'>
