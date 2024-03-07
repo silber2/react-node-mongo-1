@@ -24,7 +24,7 @@ export const Menutoggle = () => {
       <button className='menuToggle__btn' onClick={() => {setShowCart(!showCart)}}><span className="material-symbols-outlined">shopping_cart_checkout</span></button>
       <Hamburger toggled={isOpen} toggle={setOpen} z-index='1000' onToggle={toggled => setShowNav(!showNav)}/>
       <aside className={showCart ? 'cartContainer show' : 'cartContainer menuDesplegable'} >
-        {/* <Carrito hideCart={hideCart} /> */}
+        <Carrito hideCart={hideCart} />
       </aside>
       <nav className={showNav ? 'navBar-container show' : 'navBar-container'}>
         <NavBar hideMenu={hideMenu}/>

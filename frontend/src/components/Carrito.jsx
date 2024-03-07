@@ -27,24 +27,16 @@ export default function Carrito({hideCart}) {
     </div>
   );
 
-  if (carrito.length > 0) {
   return (
     <>
       {cartHeader}
       <ul className='cartContainer__ul'>
-        {carrito.map((prod) => (
+        {carrito.length > 0 ? carrito.map((prod) => (
           <CartProd prod={prod} key={prod.name} handleEliminar={handleEliminar} />
-        ))}
+        )) : <p className='cartFold'>No hay nada en el carrito</p>}
       </ul>
       <CarritoCompra enviarTicket={traerTicket} /> 
     </>
   );
-  } else {
-    return (
-      <>
-        {cartHeader}
-        <p className='cartFold'>No hay nada en el carrito</p>
-    </>
-    )
   }
-}
+     

@@ -8,9 +8,10 @@ export default function Productos() {
 
   const {categoria} = useParams()
   const [productos, setProductos] = useState([])
+  const URL = categoria != undefined ? `https://react-node-mongo-1.onrender.com/api/productos/category/${categoria}` : "https://react-node-mongo-1.onrender.com/api/productos"
 
   useEffect(() => {
-      axios.get(categoria ? `https://react-node-mongo-1.onrender.com/api/productos/category/${categoria}` : "https://react-node-mongo-1.onrender.com/api/productos")
+      axios.get(URL)
       .then(response => {
         if (response.data.length <= 0) {
           return console.error('its empty')
