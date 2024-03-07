@@ -12,9 +12,9 @@ export default function Productos() {
   useEffect(() => {
       axios.get("https://react-node-mongo-1.onrender.com/api/productos")
       .then(response => {
-        // if (response.data.length <= 0) {
-        //   return console.error('its empty')
-        // }
+        if (response.data.length <= 0) {
+          return console.error('its empty')
+        }
         setProductos(response.data)
       })
       .catch(err => console.error(err + 'fetch error'))
@@ -25,12 +25,12 @@ export default function Productos() {
       <section className='productos-container'>
           <label className='productos-container__label'>{productos.category ? productos.category : "Todos los Productos"}</label>
           <div className='prodsContainer'>
-                {/* {productos.map((prod, index) => (
+                {productos.map((prod, index) => (
                 <Producto 
                   producto={prod}
                   key={index}
                 />
-                ))} */}
+                ))}
           </div>
 
       </section>
