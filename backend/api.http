@@ -23,3 +23,6 @@ Content-Type: application/json
     "mail": "fran@",
     "password": "123455"
 }
+
+###
+GET https://react-node-mongo-1.onrender.com/api/productos HTTP/1.1
