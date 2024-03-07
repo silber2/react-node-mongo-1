@@ -13,28 +13,27 @@ import Productos from './components/Productos'
 function App() {
 
 return (
-  <h1>hola lcdtm</h1>
-  // <CartProvider>
-  //   <BrowserRouter>
+  <CartProvider>
+    <BrowserRouter>
       
-  //     <header>
-  //       <h1 className='header__title'><Link to="/" >TiendaWeb</Link></h1>
-  //       <Menutoggle />
-  //     </header>
+      <header>
+        <h1 className='header__title'><Link to="/" >TiendaWeb</Link></h1>
+        <Menutoggle />
+      </header>
      
-  //      <Routes>
-  //         <Route path="/" element={<Home />} />
-  //         <Route path="/:categoria" element={<Productos />} />
-  //         <Route path='/name/:name' element={<ProductosDetail />} />
-  //         <Route path="/carrito" element={<Carrito />} />
-  //         <Route path="/newsletter" element={<Newsletter />} />
-  //         <Route path='/contacto&Redes' element={<ContactoRedes />} />
-  //      </Routes>
+       <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:categoria" element={<Productos />} />
+          <Route path='/name/:name' element={<ProductosDetail />} />
+          <Route path="/carrito" element={<Carrito />} />
+          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path='/contacto&Redes' element={<ContactoRedes />} />
+       </Routes>
 
-  //     <Footer />
+      <Footer />
 
-  //   </BrowserRouter>
-  // </CartProvider>
+    </BrowserRouter>
+  </CartProvider>
 )
 }
 
