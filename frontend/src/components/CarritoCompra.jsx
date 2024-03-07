@@ -10,7 +10,7 @@ export default function CarritoCompra({enviarTicket}) {
     const [total, setTotal] = useState(0);
 
     function calcularTotal() {
-        return carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
+        return carrito && carrito.reduce((acc, producto) => acc + producto.precio * producto.cantidad, 0);
       }
 
       const compra = 
