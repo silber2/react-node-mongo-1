@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import '../estilos.css'
 import Producto from './Producto.jsx';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Productos() {
 
-  // const {categoria} = useParams()
+  const {categoria} = useParams()
   const [productos, setProductos] = useState([])
 
   useEffect(() => {
