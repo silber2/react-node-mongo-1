@@ -23,7 +23,7 @@ return (
      
        <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:categoria" element={<Productos />} />
+          {/* <Route path="/:categoria" element={<Productos />} /> */}
           <Route path='/name/:name' element={<ProductosDetail />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/newsletter" element={<Newsletter />} />
