@@ -7,6 +7,9 @@ import React, { createContext, useState } from "react"
         const [carrito, setCarrito] = useState([])
 
         const handleAgregar = (producto) => {
+            if (!carrito) {
+                return;
+              }
             const index = carrito.findIndex((item) => item.name === producto.name);
             if (index !== -1) {
               const newCarrito = [...carrito];
@@ -19,6 +22,9 @@ import React, { createContext, useState } from "react"
         }
         
         const handleEliminar = (producto) => {
+            if (!carrito) {
+                return;
+              }
             const index = carrito.findIndex((prod) => prod.name === producto.name);
             if (index !== -1) {
                 const newCarrito = [...carrito];
