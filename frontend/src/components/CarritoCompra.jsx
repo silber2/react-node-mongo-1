@@ -22,7 +22,7 @@ export default function CarritoCompra({enviarTicket}) {
     async function comprar () {
         try {
             const axiosRes = await axios.post(`https://react-node-mongo-1.onrender.com/api/compras`, compra)
-            const ticket = axiosRes.data
+            const ticket = await axiosRes.data
             enviarTicket(ticket)
         } catch (error) {
             console.error(`error: ${error}`)

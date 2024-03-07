@@ -25,4 +25,4 @@ Content-Type: application/json
 }
 
 ###
-GET https://react-node-mongo-1.onrender.com/api/productos HTTP/1.1
+GET https://react-node-mongo-1.onrender.com/carrito HTTP/1.1
