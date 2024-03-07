@@ -25,12 +25,12 @@ export default function Productos() {
       <section className='productos-container'>
           <label className='productos-container__label'>{productos.category ? productos.category : "Todos los Productos"}</label>
           <div className='prodsContainer'>
-                {productos.map((prod, index) => (
+                {/* {productos.map((prod, index) => (
                 <Producto 
                   producto={prod}
                   key={index}
                 />
-                ))}
+                ))} */}
           </div>
 
       </section>
