@@ -29,6 +29,8 @@ export default function Carrito({hideCart}) {
     </div>
   );
 
+  console.log(ticket)
+
   return (
     <>
       {cartHeader}
