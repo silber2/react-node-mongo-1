@@ -6,12 +6,12 @@ import CarritoCompra from './CarritoCompra.jsx';
 export default function Carrito({hideCart}) {
   
   const {carrito, setCarrito, handleEliminar} = useContext(CartContext);
-  const [ticket, setTicket] = useState()
+  // const [ticket, setTicket] = useState()
 
-  const traerTicket = (ticket) => {
-    setTicket(ticket)
-    console.log(ticket)
-  }
+  // const traerTicket = (ticket) => {
+  //   setTicket(ticket)
+  //   console.log(ticket)
+  // }
 
   useEffect(() => {
       () => {     
