@@ -7,8 +7,7 @@ import React, { createContext, useState } from "react"
         const [carrito, setCarrito] = useState([])
 
         const handleAgregar = (producto) => {
-            if (carrito) {
-                const index = carrito.findIndex((item) => item.name === producto.name);
+              const index = carrito.findIndex((item) => item.name === producto.name);
             if (index !== -1) {
               const newCarrito = [...carrito];
               newCarrito[index].cantidad += 1
@@ -18,7 +17,6 @@ import React, { createContext, useState } from "react"
               setCarrito([...carrito, { ...producto, cantidad: 1 }]);
             }
             }
-        }
         
         const handleEliminar = (producto) => {
             if (!carrito) {
