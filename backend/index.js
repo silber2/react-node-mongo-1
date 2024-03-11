@@ -19,6 +19,6 @@ app.use('/api/productos', productRouter);
 app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 
-app.listen(4003, () => {
+app.listen(process.env.PORT, () => {
     console.log('escuchando')
 })

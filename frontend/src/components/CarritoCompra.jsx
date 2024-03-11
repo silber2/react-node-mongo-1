@@ -6,7 +6,7 @@ import Ticket from './Ticket';
 
 export default function CarritoCompra({enviarTicket}) {
 
-    const {carrito} = useContext(CartContext);
+    const {carrito, setCarrito} = useContext(CartContext);
     const [total, setTotal] = useState(0);
 
     function calcularTotal() {
@@ -24,6 +24,7 @@ export default function CarritoCompra({enviarTicket}) {
             const axiosRes = await axios.post(`https://react-node-mongo-1.onrender.com/api/compras`, compra)
             const ticket = await axiosRes.data
             enviarTicket(ticket)
+            setCarrito([])
         } catch (error) {
             console.error(`error: ${error}`)
         }

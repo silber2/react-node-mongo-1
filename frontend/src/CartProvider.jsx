@@ -19,18 +19,18 @@ import React, { createContext, useState } from "react"
             }
         
         const handleEliminar = (producto) => {
-            if (!carrito) {
-                return;
-              }
             const index = carrito.findIndex((prod) => prod.name === producto.name);
+            if (carrito[index].cantidad > 1) {
+              carrito[index].cantidad--;
+              const newCarrito = [...carrito];
+              setCarrito(newCarrito)
+              return
+            }
             if (index !== -1) {
                 const newCarrito = [...carrito];
                 newCarrito.splice(index, 1);
                 setCarrito(newCarrito);
                 localStorage.setItem('cart', JSON.stringify(newCarrito))
-            }
-            if (index.cantidad > 1) {
-                carrito[index].cantidad -= 1;
             }
           };
 
