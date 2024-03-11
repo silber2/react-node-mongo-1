@@ -1,25 +1,45 @@
-import User from "../mongoModels.js/User.js";
+import User from "../models/User.js";
 import bcrypt from 'bcrypt'
 
-    const postUser = async (req, res) => {
+    const userRegister = async (req, res) => {
 
         try {
             const {usuario, mail, password} = req.body;
 
-        const passwordHash = await bcrypt.hash(password, 10)
+             const passwordHash = await bcrypt.hash(password, 10)
 
-        const newUser = new User({
-            usuario: usuario,
-            mail: mail,
-            password: passwordHash 
-        })
+            const newUser = new User({
+                usuario: usuario,
+                mail: mail,
+                password: passwordHash 
+            })
 
         newUser.save()
 
-        res.status(200)
+        res.send(newUser)
         } catch (error) {
             console.error({error})
         }
     }
 
-export default postUser;
+    const userLogin = async (req, res) => {
+        try {
+            const {usuario, password} = req.body;
+            const user = await User.findOne({usuario})
+            const checkPassword = user === null
+            ? false 
+            : await bcrypt.compare(password, user.password)
+
+            if (!(user && checkPassword)) {
+                res.status(401).json({
+                    error: "invalid username or password"
+                })
+            }
+
+            res.status(200).send("login ok")
+        } catch (error) {
+            console.error('error login ' + error)
+        }
+    }
+
+export {userRegister, userLogin};

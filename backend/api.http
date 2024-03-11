@@ -26,3 +26,22 @@ Content-Type: application/json
 
 ###
 GET https://react-node-mongo-1.onrender.com/carrito HTTP/1.1
+
+###
+POST http://localhost:4003/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "fran2222",
+    "password": "2345"
+}
+
+### 
+POST http://localhost:4003/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "usuario": "fran2222",
+    "mail": "fran1@",
+    "password": "2345"
+}
