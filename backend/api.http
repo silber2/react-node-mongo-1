@@ -37,11 +37,9 @@ Content-Type: application/json
 }
 
 ### 
-POST http://localhost:4003/api/user/register HTTP/1.1
+POST http://localhost:4003/api/newsletter HTTP/1.1
 Content-Type: application/json
 
 {
-    "usuario": "fran2222",
-    "mail": "fran1@",
-    "password": "2345"
+  "mail": "sdadasdsad"
 }

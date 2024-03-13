@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import axios from 'axios'
 
 export const Newsletter = () => {
 
     const {register, handleSubmit} = useForm()
-    
+    const [registrado, setRegistrado] = useState(false)
+
     const enviar = (datos) => {
-        console.log(datos)
+      axios.post(`http://localhost:4003/api/newsletter`, datos)
+      console.log('gracias por suscribirte')
+      setRegistrado(true)
     }
 
   return (
-    <form onSubmit={handleSubmit(enviar)}>
-        <label htmlFor="">Nombre</label>
-        <input type="text" {...register("nombre")} />
-        <label htmlFor="">Email</label>
-        <input type="email" {...register("mail")} />
-        <label htmlFor="">Telefono</label>
-        <input type="phone" {...register("tel")} />
-        <button type='submit'>enviar</button>
-    </form>
+      <div className='subContainer footerRight'>
+      <label className='footerRight__lbl'>suscribite a nuestro newsletter para conocer nuevas ofertas y lanzamientos!</label>
+      {registrado && <p>Gracias por registrarte. Recibiras nuestras ofertas por mail!</p>}
+      <form className='footerRight__form' onSubmit={handleSubmit(enviar)}>
+          <input className='footerRight__form--inp' type="email" placeholder='Mail' {...register("mail")} />
+          <button className='footerRight__form--btn' type='submit'>Enviar</button>
+      </form>
+      </div>
   )
 }
