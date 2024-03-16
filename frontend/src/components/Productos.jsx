@@ -8,7 +8,7 @@ export default function Productos() {
 
   const {categoria} = useParams()
   const [productos, setProductos] = useState([])
-  const URL = categoria != undefined ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`
+  const URL = categoria != undefined ? `https://react-node-mongo-1.onrender.com/api/productos/category/${categoria}` : `https://react-node-mongo-1.onrender.com/api/productos`
 
   useEffect(() => {
       axios.get(URL)
