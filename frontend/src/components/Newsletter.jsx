@@ -8,7 +8,7 @@ export const Newsletter = () => {
     const [registrado, setRegistrado] = useState(false)
 
     const enviar = (datos) => {
-      axios.post(`http://localhost:4003/api/newsletter`, datos)
+      axios.post(`${import.meta.env.VITE_BACK_URI}/api/newsletter`, datos)
       console.log('gracias por suscribirte')
       setRegistrado(true)
     }

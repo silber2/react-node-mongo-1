@@ -25,7 +25,7 @@ export const ProductosDetail = () => {
 
   useEffect(() => {
 
-    fetchItem(`https://react-node-mongo-1.onrender.com/api/productos/name/${name}`)
+    fetchItem(`${import.meta.env.VITE_BACK_URI}/api/productos/name/${name}`)
 
   }, [])
 

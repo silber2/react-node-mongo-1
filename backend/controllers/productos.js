@@ -1,27 +1,26 @@
-import {ProdModel} from '../models/productos.js';
+
+import Prod from '../mongoModels.js/Prod.js'
 
 export class ProdController{
 
-    static allProdC (req, res) {
-       ProdModel.allProds()
+    static async allProdC (req, res) {
+        Prod.find({})
             .then(prods => {
-            res.status(200).json(prods)
+                if (prods && prods.length > 0) {
+                    res.status(200).json(prods);
+                } else { 
+                    res.send('prods está vacío');
+                }
             })
             .catch(err => {console.error(err)})
     }
 
-     static addProdC (req, res) {
-         const newProd = req.body
-         const prod = ProdModel.addProd({newProd});
-         res.status(200).json(prod)
-     }
-
      static categoryItemsC (req, res) {
          const category = req.params.categoria
-         ProdModel.prodCategory({category})
+         Prod.find({categoria: category})
             .then(results => {
-                if (results.length <= 0) {
-                    console.error('resultado vacio')
+                if (results.length <=  0) {
+                   res.status(404).send(console.error('no existe esa categoria'))
                 }
                 res.json(results)
                 })
@@ -33,8 +32,11 @@ export class ProdController{
 
          const name = req.params.name
         
-         ProdModel.prodName({name})
+         Prod.findOne({name: name})
             .then(result => {
+                if (item === undefined) {
+                    res.status(404).send(console.error('No se encontró el producto'));
+                }
                 res.status(200).json(result)
             })
             .catch(err => console.error({err}))
