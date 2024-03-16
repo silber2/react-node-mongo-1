@@ -1,4 +1,4 @@
-import Newsl from "../models/Newsletter.js"
+import Newsl from "../models/newsletter.js"
 import transporter from "../utilities/nodemailer.js";
 
 const newslController = async (req, res) => {
