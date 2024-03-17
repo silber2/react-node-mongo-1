@@ -20,7 +20,7 @@ app.use('/api/productos', productRouter);
 app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 app.use('/api/newsletter', newslRouter)
-app.use('/api/createOrder', mpRouter)
+app.use('/api/mp', mpRouter)
 
 app.listen(4003, () => {
     console.log(`escuchando en puerto`)

@@ -25,7 +25,7 @@ Content-Type: application/json
 }
 
 ###
-GET https://react-node-mongo-1.onrender.com/carrito HTTP/1.1
+GET "https://react-node-mongo-1.onrender.com/api/compramp?state=success" HTTP/1.1
 
 ###
 POST http://localhost:4003/api/user/login HTTP/1.1
