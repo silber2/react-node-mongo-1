@@ -46,15 +46,13 @@ export const crearOrden = async (req, res) => {
           }
         ],
         back_urls: {
-          success: "https://react-node-mongo-1-frontend.onrender.com/compramp?state=success",
-          failure: "https://react-node-mongo-1-frontend.onrender.com/compramp?state=failure",
-          pending: "https://react-node-mongo-1-frontend.onrender.com/compramp?state=pending"
+          success: "https://react-node-mongo-1-frontend.onrender.com/",
+          failure: "https://react-node-mongo-1-frontend.onrender.com/",
+          pending: "https://react-node-mongo-1-frontend.onrender.com/"
         },
-        auto_return: "approved",
-        notification_url: "https://react-node-mongo-1.onrender.com/api/mp/webhook"
+        notification_url: "https://react-node-mongo-1.onrender.com/api/webhook"
       }
     })
-    console.log(preferenc)
     res.json(preferenc.id)
 
 } catch (error) {      
@@ -62,9 +60,5 @@ export const crearOrden = async (req, res) => {
 }
 }
 
-// export const pedirOrden = (preferenc) => {
-//     const tktData = {
 
-//     }
-// }
 

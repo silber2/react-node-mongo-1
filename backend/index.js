@@ -22,6 +22,10 @@ app.use('/api/user', userRouter)
 app.use('/api/newsletter', newslRouter)
 app.use('/api/mp', mpRouter)
 
+app.post('api/webhook', (req, res) => {
+    console.log('dsasdsadsadsadasdasd')
+})
+
 app.listen(4003, () => {
     console.log(`escuchando en puerto`)
 })

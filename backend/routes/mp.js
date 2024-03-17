@@ -6,8 +6,10 @@ const mpRouter = express.Router()
 mpRouter.post('/crearOrden', crearOrden)
 // mpRouter.get('/pedirOrden', pedirOrden)
 
-mpRouter.post('/webhook', (req, res) => {
-    console.log(req.body)
-})
+// mpRouter.post('/webhook', async (req, res) => {
+//    console.log(req.query)
+//    console.log('recived nasheeeee')
+//    res.json("pago recibido ")
+// })
 
 export default mpRouter
