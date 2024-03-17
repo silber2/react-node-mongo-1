@@ -1,11 +1,19 @@
-import React from 'react'
+// import React from 'react'
+// import axios from 'axios'
 
-function Ticket({ticket}) {
-  return (
-    <div>
-      <p>comprobante</p>
-    </div>
-  )
-}
+// function Ticket() {
 
-export default Ticket
+//   axios.get("https://react-node-mongo-1.onrender.com/api/mp/pedirOrden")
+//     .then(preference => {
+//       preference
+//     })
+
+//   return (
+//     <div>
+//       <p>comprobante de pago</p>
+
+//     </div>
+//   )
+// }
+
+// export default Ticket

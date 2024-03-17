@@ -4,7 +4,7 @@ import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 
 const YourComponent = ({preferenceID}) => {
     useEffect(() => {
-      initMercadoPago(import.meta.env.MP_PUBLIC_KEY || 'TEST-378f6ad9-5dfe-4379-bbfd-29c649e9e0a1', { locale: 'es-AR' });
+      initMercadoPago(import.meta.env.MP_PUBLIC_KEY || 'APP_USR-b304d38d-d38f-49e6-b8c1-eb808b2be0df', { locale: 'es-AR' });
     }, []);
 
     return (
