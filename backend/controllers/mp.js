@@ -7,35 +7,11 @@ export const crearOrden = async (req, res) => {
       const preferenc = await preference.create({
         body: {
           payment_methods: {
-            excluded_payment_methods: [
-              {
-                id: "argencard"
-              },
-              {
-                id: "cabal"
-              },
-              {
-                id: "cmr"
-              },
-              {
-                id: "cencosud"
-              },
-              {
-                id: "cordobesa"
-              },
-              {
-                id: "diners"
-              },
-              {
-                id: "naranja"
-              },
-              {
-                id: "tarshop"
-              }
-            ],
+            excluded_payment_methods: [],
           excluded_payment_types: [],
           installments: 1
         },
+        notification_url: "https://react-node-mongo-1.onrender.com/api/mp/webhook",
         items: [
           {
             title: "TiendaWeb",
@@ -46,19 +22,21 @@ export const crearOrden = async (req, res) => {
           }
         ],
         back_urls: {
-          success: "https://react-node-mongo-1-frontend.onrender.com/",
+          success: "https://react-node-mongo-1.onrender.com/api/mp/success",
           failure: "https://react-node-mongo-1-frontend.onrender.com/",
           pending: "https://react-node-mongo-1-frontend.onrender.com/"
         },
-        notification_url: "https://react-node-mongo-1.onrender.com/api/webhook"
+      
       }
     })
-    res.json(preferenc.id)
+    res.status(201).json(preferenc.id)
 
 } catch (error) {      
    console.error(error);
 }
 }
 
-
+export const recibirWebhook = (req, res) => {
+    console.log('holalalallalas')
+}
 

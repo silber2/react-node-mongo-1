@@ -21,10 +21,7 @@ app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 app.use('/api/newsletter', newslRouter)
 app.use('/api/mp', mpRouter)
-
-app.post('api/webhook', (req, res) => {
-    console.log('dsasdsadsadsadasdasd')
-})
+app.use('/api/mp/success', (req, res) => {console.log('succeeeesssssxx')})
 
 app.listen(4003, () => {
     console.log(`escuchando en puerto`)

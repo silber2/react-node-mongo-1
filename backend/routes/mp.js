@@ -1,15 +1,13 @@
 import express from "express";
-import {crearOrden} from "../controllers/mp.js";
+import {crearOrden, recibirWebhook} from "../controllers/mp.js";
 
 const mpRouter = express.Router()
 
 mpRouter.post('/crearOrden', crearOrden)
 // mpRouter.get('/pedirOrden', pedirOrden)
 
-// mpRouter.post('/webhook', async (req, res) => {
-//    console.log(req.query)
-//    console.log('recived nasheeeee')
-//    res.json("pago recibido ")
+mpRouter.post('/webhook', recibirWebhook)
+// mpRouter.post('/success', (req, res) => {
+//     console.log(req.body)
 // })
-
 export default mpRouter
