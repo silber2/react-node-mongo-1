@@ -11,7 +11,7 @@ export const crearOrden = async (req, res) => {
           excluded_payment_types: [],
           installments: 1
         },
-        notification_url: "https://react-node-mongo-1.onrender.com/api/mp/webhook",
+        notification_url: 'https://react-node-mongo-1.onrender.com/api/mp/webhook',
         items: [
           {
             title: "TiendaWeb",
@@ -37,6 +37,9 @@ export const crearOrden = async (req, res) => {
 }
 
 export const recibirWebhook = (req, res) => {
-    console.log('holalalallalas')
+    
+    console.log('recibeeed')
+    res.status(200).send('okkkkks')
+    
 }
 

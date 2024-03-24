@@ -6,7 +6,7 @@ const mpRouter = express.Router()
 mpRouter.post('/crearOrden', crearOrden)
 // mpRouter.get('/pedirOrden', pedirOrden)
 
-mpRouter.post('/webhook', recibirWebhook)
+mpRouter.get('/webhook', recibirWebhook)
 // mpRouter.post('/success', (req, res) => {
 //     console.log(req.body)
 // })

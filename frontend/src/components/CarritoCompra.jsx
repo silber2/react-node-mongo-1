@@ -3,9 +3,9 @@ import { CartContext } from '../CartProvider';
 import axios from 'axios'
 import YourComponent from './mp.jsx';
 
-export default function CarritoCompra({enviarTicket, setCartComprado}) {
+export default function CarritoCompra() {
 
-    const {carrito, setCarrito} = useContext(CartContext);
+    const {carrito} = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [preferenceId, setPreferenceId] = useState(null)
 
@@ -21,7 +21,7 @@ export default function CarritoCompra({enviarTicket, setCartComprado}) {
     async function createOrder () {
         try {
             console.log(orderData)
-            const response = await axios.post(`http://localhost:4003/api/mp/crearOrden`, orderData)
+            const response = await axios.post(`https://react-node-mongo-1.onrender.com/api/mp/crearOrden`, orderData)
             const preferenceId = await response.data
             console.log(orderData)
             setPreferenceId(preferenceId)
