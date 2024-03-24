@@ -9,8 +9,8 @@ import mpRouter from './routes/mp.js';
 
 const app = express()
 
-app.use(cors());
-// app.use(express.json())
+app.use(cors('https://react-node-mongo-1-frontend.onrender.com'));
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.send('funcando')
