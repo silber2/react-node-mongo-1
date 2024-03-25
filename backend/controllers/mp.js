@@ -1,7 +1,7 @@
 import preference from "../models/mp.js";
 
 export const crearOrden = async (req, res) => {
-    const {carrito, total} = req.body
+    const {carrito, total} = await req.body
 
     try {
       const preferenc = await preference.create({
@@ -32,7 +32,7 @@ export const crearOrden = async (req, res) => {
     res.status(201).json(preferenc.id)
 
 } catch (error) {      
-   console.error(error);
+   console.error(error + "error crear orden back");
 }
 }
 

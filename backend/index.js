@@ -9,7 +9,7 @@ import mpRouter from './routes/mp.js';
 
 const app = express()
 
-app.use(cors('https://react-node-mongo-1-frontend.onrender.com'));
+app.use(cors('https://react-node-mongo-1-frontend.onrender.com', 'https://api.mercadopago.com/v1/payments'));
 app.use(express.json())
 
 app.get('/', (req, res) => {
