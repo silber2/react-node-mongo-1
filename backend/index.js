@@ -9,8 +9,8 @@ import mpRouter from './routes/mp.js';
 
 const app = express()
 
-app.use(cors('https://react-node-mongo-1-frontend.onrender.com', 'https://api.mercadopago.com/v1/payments'));
-app.use(express.json())
+app.use(cors());
+// app.use(express.json())
 
 app.get('/', (req, res) => {
     res.send('funcando')
@@ -21,7 +21,6 @@ app.use('/api/compras', comprasRouter);
 app.use('/api/user', userRouter)
 app.use('/api/newsletter', newslRouter)
 app.use('/api/mp', mpRouter)
-app.use('/api/mp/success', (req, res) => {res.send('succeeeesssss')})
 
 app.listen(4003, () => {
     console.log(`escuchando en puerto`)

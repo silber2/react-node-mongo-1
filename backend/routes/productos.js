@@ -5,6 +5,6 @@ const productRouter = express.Router();
 
 productRouter.get('/', ProdController.allProdC)
 productRouter.get('/category/:categoria', ProdController.categoryItemsC)
-productRouter.get('/name/:name', ProdController.prodNameC)
+productRouter.get('/nombre/:name', ProdController.prodNameC)
 
 export default productRouter

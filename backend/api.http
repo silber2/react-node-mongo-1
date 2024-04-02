@@ -56,3 +56,5 @@ Content-type: application/json
         "cantidad": 1, 
         "precio": 333
  }
+###
+ GET https://6147-201-252-16-168.ngrok-free.app/api/productos/name/hola1 HTTP/1.1

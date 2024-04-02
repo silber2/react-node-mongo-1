@@ -1,7 +1,7 @@
 import preference from "../models/mp.js";
 
 export const crearOrden = async (req, res) => {
-    const {carrito, total} = await req.body
+    const {carrito} = await req.body
 
     try {
       const preferenc = await preference.create({
@@ -11,18 +11,15 @@ export const crearOrden = async (req, res) => {
           excluded_payment_types: [],
           installments: 1
         },
-        notification_url: 'https://react-node-mongo-1.onrender.com/api/mp/webhook',
-        items: [
-          {
-            title: "TiendaWeb",
-            description: carrito.map(prod => prod.name + " x " + prod.cantidad),
-            quantity: 1,
-            unit_price: total,
+        notification_url: `https://6149-190-57-192-16.ngrok-free.app/api/mp/webhook`,
+        items: carrito.map(prod => ({
+            title: prod.name,
+            quantity: prod.cantidad,
+            unit_price: prod.precio,
             currency_id: "ARS"
-          }
-        ],
+        })),
         back_urls: {
-          success: "https://react-node-mongo-1.onrender.com/api/mp/success",
+          success: "https://react-node-mongo-1-frontend.onrender.com/",
           failure: "https://react-node-mongo-1-frontend.onrender.com/",
           pending: "https://react-node-mongo-1-frontend.onrender.com/"
         },
@@ -38,7 +35,9 @@ export const crearOrden = async (req, res) => {
 
 export const recibirWebhook = (req, res) => {
     
-    console.log('recibeeed')
+    const payment = req.body
+    console.log(payment)  
+
     res.status(200).send('okkkkks')
     
 }

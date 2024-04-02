@@ -22,24 +22,23 @@ export class ProdController{
                 if (results.length <=  0) {
                    res.status(404).send(console.error('no existe esa categoria'))
                 }
-                res.json(results)
+                res.json({results})
                 })
             .catch(err => {console.error({err} + 'error1')})
          
+                
      }
 
      static prodNameC (req, res) {
-
          const name = req.params.name
-        
          Prod.findOne({name: name})
             .then(result => {
-                if (item === undefined) {
+                if (!result) {
                     res.status(404).send(console.error('No se encontró el producto'));
                 }
                 res.status(200).json(result)
             })
-            .catch(err => console.error({err}))
+            .catch(err => console.error(err))
         
      }
 }

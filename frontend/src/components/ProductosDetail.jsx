@@ -2,32 +2,31 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../CartProvider.jsx';
 import Carrusel from './Carrusel.jsx';
+import axios from 'axios'
 
 export const ProductosDetail = () => {
   const { name } = useParams();
   const { handleAgregar } = useContext(CartContext);
-  const [item, setItem] = useState()  
-
-  const fetchItem = async (url) => {
+  const [item, setItem] = useState({})  
+  
+  async function cargarItem() {
     try {
-        const resp = await fetch(url)
-        if (!resp.ok) {
-         return console.error("error fetch")
-        }
-        const respJSON = await resp.json()
-        
-        setItem(respJSON)
+      const response = await axios.get(`https://react-node-mongo-1.onrender.com/api/productos/nombre/${name}`)
+      console.log(response)
+      const responseData = await response.data
+      console.log(responseData)
+      setItem(responseData)
+    } catch (error) {
+      console.error(error + " hola errrorrrr")
     }
-    catch (error) {
-        console.error('error')
-    }
-}
+  }
 
   useEffect(() => {
-
-    fetchItem(`${import.meta.env.VITE_BACK_URI}/api/productos/name/${name}`)
+    
+    cargarItem()
 
   }, [])
+
 
   return (
     <div className='prodsDetailContainer'>

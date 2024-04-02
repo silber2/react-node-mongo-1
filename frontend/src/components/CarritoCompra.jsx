@@ -20,13 +20,11 @@ export default function CarritoCompra() {
 
     async function createOrder () {
         try {
-            console.log(orderData)
-            const response = await axios.post(`https://react-node-mongo-1.onrender.com/api/mp/crearOrden`, orderData)
+            const response = await axios.post(`https://6149-190-57-192-16.ngrok-free.app/api/mp/crearOrden`, orderData)
             const preferenceId = await response.data
-            console.log(orderData)
             setPreferenceId(preferenceId)
         } catch (error) {
-            console.error(error)
+            console.error("error en crear orden")
         }
     }
 
