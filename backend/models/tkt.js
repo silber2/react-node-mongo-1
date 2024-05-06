@@ -1,16 +1,10 @@
-import Tkt from "../mongoModels.js/Tkt.js"
+import { Schema, model } from "mongoose";
 
-export class tktModel {
+const tktSchema = new Schema({
+    carrito: Array,
+    total: Number,
+})
 
-    static getTkts() {
-        
-    }
-    static postTkts({ticket}) {
-        const newTkt = new Tkt({
-            carrito: ticket.carrito,
-            total: ticket.total
-        })
+const Tkt = model('tkt', tktSchema)
 
-        return newTkt.save()
-    }
-}
+export default Tkt

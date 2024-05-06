@@ -20,7 +20,7 @@ export default function CarritoCompra() {
 
     async function createOrder () {
         try {
-            const response = await axios.post(`https://6149-190-57-192-16.ngrok-free.app/api/mp/crearOrden`, orderData)
+            const response = await axios.post(`${import.meta.env.VITE_BACK_URI}/api/mp/crearOrden`, orderData)
             const preferenceId = await response.data
             setPreferenceId(preferenceId)
         } catch (error) {

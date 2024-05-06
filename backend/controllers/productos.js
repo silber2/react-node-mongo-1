@@ -1,5 +1,4 @@
-
-import Prod from '../mongoModels.js/Prod.js'
+import Prod from "../models/productos.js";
 
 export class ProdController{
 

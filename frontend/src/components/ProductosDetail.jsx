@@ -11,10 +11,8 @@ export const ProductosDetail = () => {
   
   async function cargarItem() {
     try {
-      const response = await axios.get(`https://react-node-mongo-1.onrender.com/api/productos/nombre/${name}`)
-      console.log(response)
+      const response = await axios.get(`${import.meta.env.VITE_BACK_URI}/api/productos/nombre/${name}`)
       const responseData = await response.data
-      console.log(responseData)
       setItem(responseData)
     } catch (error) {
       console.error(error + " hola errrorrrr")

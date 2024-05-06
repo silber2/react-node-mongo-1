@@ -111,6 +111,7 @@ header {
     width: 100vw;
     height: 100vh;
     background-image: url('./img/home.jpg');
+    background-size: cover;
     background-attachment: fixed;
     background-position: 65% 60%;
     &__2back {
@@ -118,13 +119,10 @@ header {
         width: 100%;
         background-color: rgba(0, 0, 0, 0.10);
         display: flex;
-        justify-content: center;
-        align-items: center;
-        &--frase {
+        h4 {
             color: var(--d-color);
-            font-size: 3rem;
+            font-size: 3.5rem;
             max-width: 80%;
-            text-align: center;
         }
     }
 }

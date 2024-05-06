@@ -1,4 +1,5 @@
-import { tktModel } from "../models/tkt.js";
+import Tkt from "../models/tkt.js";
+
 
 export class tktController {
     
@@ -10,7 +11,12 @@ export class tktController {
             
         const ticket = req.body;
 
-        tktModel.postTkts({ticket})
+        const newTkt = new Tkt({
+            carrito: ticket.carrito,
+            total: ticket.total
+        })
+
+        return newTkt.save()
             .then(newTicket => {
 
                 const carritoClean = newTicket.carrito.map(item => {
