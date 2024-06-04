@@ -8,23 +8,21 @@ export default function Productos() {
 
   const {categoria} = useParams()
   const [productos, setProductos] = useState([])
-  const URL = categoria != undefined ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`
 
   useEffect(() => {
-      axios.get(URL)
+    axios.get(categoria ? `${import.meta.env.VITE_BACK_URI}/api/productos/category/${categoria}` : `${import.meta.env.VITE_BACK_URI}/api/productos`)
       .then(response => {
         if (response.data.length <= 0) {
-          return console.error('its empty')
+        return console.error('its empty')
         }
-        setProductos(response.data)
-      })
+        setProductos(categoria ? response.data : response.data)
+        })
       .catch(err => console.error(err + 'fetch error'))
-  
-  }, [categoria])
+    }, [categoria])
 
     return (
       <section className='productos-container'>
-          <label className='productos-container__label'>{productos.category ? productos.category : "Todos los Productos"}</label>
+          <label className='productos-container__label'>{categoria ? productos.categoria : "Todos los Productos"}</label>
           <div className='prodsContainer'>
                 {productos.map((prod, index) => (
                 <Producto 

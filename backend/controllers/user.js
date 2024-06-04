@@ -18,9 +18,7 @@ import jwt from "jsonwebtoken";
         newUser.save()
 
         res.send(newUser)
-        } catch (error) {
-            console.error({error})
-        }
+        } catch {(error) => next(err)}
     }
 
     const userLogin = async (req, res) => {

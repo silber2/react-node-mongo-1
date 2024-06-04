@@ -20,9 +20,9 @@ export default function CarritoCompra() {
 
     async function createOrder () {
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACK_URI}/api/mp/crearOrden`, orderData)
-            const preferenceId = await response.data
-            setPreferenceId(preferenceId)
+          const response = await axios.post(`${import.meta.env.VITE_BACK_URI}/api/mp/crearOrden`, orderData)
+          const preferenceId = await response.data
+          setPreferenceId(preferenceId)
         } catch (error) {
             console.error("error en crear orden")
         }

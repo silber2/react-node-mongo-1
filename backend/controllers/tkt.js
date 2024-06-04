@@ -29,6 +29,6 @@ export class tktController {
                 }
                 res.json(ticketClean)
             })
-            .catch(err => console.error(err + 'error traer tkt al controller'))
+            .catch(err => next(err))
        }
 }

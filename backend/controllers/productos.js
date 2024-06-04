@@ -2,7 +2,7 @@ import Prod from "../models/productos.js";
 
 export class ProdController{
 
-    static async allProdC (req, res) {
+    static allProdC (req, res, next) {
         Prod.find({})
             .then(prods => {
                 if (prods && prods.length > 0) {
@@ -11,20 +11,19 @@ export class ProdController{
                     res.send('prods está vacío');
                 }
             })
-            .catch(err => {console.error(err)})
+            .catch(err => (next(err)))
     }
 
-     static categoryItemsC (req, res) {
-         const category = req.params.categoria
-         Prod.find({categoria: category})
+     static categoryItemsC (req, res, next) {
+         const categoria = req.params.categoria
+         Prod.find({categoria})
             .then(results => {
-                if (results.length <=  0) {
+                if (results.length <= 0) {
                    res.status(404).send(console.error('no existe esa categoria'))
                 }
-                res.json({results})
+                res.status(200).json(results);
                 })
-            .catch(err => {console.error({err} + 'error1')})
-         
+            .catch(err => next(err))         
                 
      }
 
@@ -37,7 +36,7 @@ export class ProdController{
                 }
                 res.status(200).json(result)
             })
-            .catch(err => console.error(err))
+            .catch(err => next(err))
         
      }
 }

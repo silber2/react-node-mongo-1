@@ -10,7 +10,6 @@ const YourComponent = ({preferenceID}) => {
     return (
       <div>
        {preferenceID && <Wallet initialization={{ preferenceId: `${preferenceID}` }} customization={{ texts:{ valueProp: 'smart_option'}}} /> }
-        
       </div>
     );
 };
