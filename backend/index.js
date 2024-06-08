@@ -25,6 +25,7 @@ app.use('/api/mp', mpRouter)
 
 app.use(errorHandler)
 
+app.use((error, req, res) => (res.status(404).send('no se encontro la ruta')))
 app.listen(4003, () => {
     console.log(`escuchando en puerto`)
 })
