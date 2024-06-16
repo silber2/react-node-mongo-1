@@ -8,7 +8,7 @@ export default function ContactoRedes() {
             <div>
                 <div className='linkContainer'>
                 <span className="material-symbols-outlined">mail</span>
-                <a>tiendaWeb@gmail.com</a>
+                <a>Hoprebel@gmail.com</a>
                 </div>
                 <div className='linkContainer'>
                     <span className="material-symbols-outlined">sms</span>
@@ -24,16 +24,8 @@ export default function ContactoRedes() {
             <label>Redes</label>
             <div>
                 <div className='linkContainer'>
-                    <span className="material-symbols-outlined">mail</span>
-                    <a href="">@tiendaweb123-ig</a>
-                </div>
-                <div className='linkContainer' >
-                    <span className="material-symbols-outlined">mail</span>
-                    <a href="">@tiendaweb123.x</a>
-                </div>
-                <div className='linkContainer'>
-                    <span className="material-symbols-outlined">mail</span>
-                    <a href="">@tiendaweb123-fb</a>
+                    <i style={{fontSize:'1.6rem'}} className="fa fa-instagram"></i>
+                    <a style={{color:'#04ace0'}} href="https://instagram.com">@HopRebel</a>
                 </div>
             </div>
         </div>

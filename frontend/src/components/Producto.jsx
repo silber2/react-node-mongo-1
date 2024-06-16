@@ -8,7 +8,7 @@ export default function Producto({producto}) {
 
   return (
       <div className='prodsContainer__container'>
-          <Link to={`/${producto.categoria}/${producto.name}`} ><img className='prods__img' src={producto.img} alt="remera" /></Link>
+          <Link to={`name/${producto.name}`} ><img className='prods__img' src={producto.img} alt="remera" /></Link>
           <div className='prods__info'>
               <h2 className='prods__info--name'>{producto.name}</h2>
               <p className='prods__info--price'>${producto.precio}</p>

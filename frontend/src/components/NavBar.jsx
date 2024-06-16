@@ -8,8 +8,8 @@ export const NavBar = ( {hideMenu} ) => {
     <>   
           <ul className='nav--ul'>
               <li className='nav--ul__li'><Link onClick={hideMenu} to="/remeras">Remeras</Link></li>
+              <li className='nav--ul__li'><Link onClick={hideMenu} to="/hoodies">Hoodies</Link></li>
               <li className='nav--ul__li'><Link onClick={hideMenu} to="/gorras">Gorras</Link></li>
-              <li className='nav--ul__li'><Link onClick={hideMenu} to="/pantalones">Pantalones</Link></li>
               <hr />
               <li className='nav--ul__li'><Link onClick={hideMenu} to="/contacto&Redes" >Contacto</Link></li>
           </ul>

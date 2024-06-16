@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 export default function Carrusel( {item} ) {
 
-  const [imgCorr, setImgCorr] = useState(item.img1)
+  const [imgCorr, setImgCorr] = useState('')
   const [position, setPosition] = useState(1)
   
   useEffect(() => {
     setImgCorr(position === 1 ? item.img : item.img2);
-  }, [position]);
+  }, [position, item]);
 
   const handleFoll = () => {
     if (position < 2) {

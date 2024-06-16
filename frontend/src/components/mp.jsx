@@ -9,10 +9,10 @@ const YourComponent = ({preferenceID}) => {
 
     return (
       <div>
-       {preferenceID && <Wallet initialization={{ preferenceId: `${preferenceID}` }} customization={{ texts:{ valueProp: 'smart_option'}}} /> }
+       {preferenceID && <Wallet initialization={{ preferenceId: `${preferenceID}`, redirectMode: 'blank'}}/> }
       </div>
     );
 };
-
+// customization={{ texts:{ valueProp: 'smart_option'}}}
 export default YourComponent;
         
