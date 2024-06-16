@@ -11,7 +11,7 @@ export const crearOrden = async (req, res, next) => {
             excluded_payment_types: [],
             installments: 1
           },
-          notification_url: `https://6149-190-57-192-16.ngrok-free.app/api/mp/webhook`,
+          notification_url: `https://react-node-mongo-1-frontend.onrender.com/webhook`,
           items: carrito.map(prod => ({
               title: prod.name,
               quantity: prod.cantidad,
@@ -36,7 +36,7 @@ export const recibirWebhook = (req, res) => {
     const payment = req.body
     console.log(payment)  
 
-    res.status(200).send('okkkkks')
+    res.status(200).send('webhook ok')
     
 }
 
