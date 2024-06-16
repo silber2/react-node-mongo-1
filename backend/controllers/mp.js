@@ -11,7 +11,7 @@ export const crearOrden = async (req, res, next) => {
             excluded_payment_types: [],
             installments: 1
           },
-          notification_url: `https://react-node-mongo-1-frontend.onrender.com/webhook`,
+          notification_url: `https://react-node-mongo-1.onrender.com/webhook`,
           items: carrito.map(prod => ({
               title: prod.name,
               quantity: prod.cantidad,
