@@ -17,7 +17,7 @@ export default function Productos() {
         }
         setProductos(categoria ? response.data : response.data)
         })
-      .catch(err => console.error(err + 'fetch error'))
+      .catch(err => console.error(err + ' fetch error'))
     }, [categoria])
 
     return (
