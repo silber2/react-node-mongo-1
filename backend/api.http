@@ -4,8 +4,10 @@ Content-Type: application/json
 
 {
     "carrito": [
-        {"hola": "hola"},
-        {"chau": "chau"}
+        {"name": "hola",
+        "precio": 111,
+        "cantidad": 123
+        }
     ],
     "total": 12323
 }

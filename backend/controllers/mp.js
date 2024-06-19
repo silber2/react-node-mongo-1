@@ -1,7 +1,10 @@
-import preference from "../models/mp.js";
+import {MercadoPagoConfig, Preference } from "mercadopago";
+// import preference from "../models/mp.js";
+const client = new MercadoPagoConfig({ accessToken: 'APP_USR-7719627064516408-031710-98268c77b535fb6f4c0a5f99f35ec741-1725842309'});
 
+const preference = new Preference(client);
 export const crearOrden = async (req, res, next) => {
-    console.log(req.body)
+    
     const {carrito} = await req.body
       try {
         const preferenc = await preference.create({
@@ -26,9 +29,10 @@ export const crearOrden = async (req, res, next) => {
         
         }
       })
-      res.status(201).json(preferenc.id)
-
-    } catch {error => next(error)}
+      // const idPreference = preferenc.id
+      const initPoint = preferenc.init_point
+      res.status(201).json(initPoint)
+    } catch(error) {next(error)}
     }
 
 export const recibirWebhook = (req, res) => {
